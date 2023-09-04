@@ -2,12 +2,10 @@
 <html>
 <head>
   <title>TRPGキャラクターシートアプリ</title>
-  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-  <h1>Welcome to TRPGキャラクターシートアプリ</h1>
+  <h1>TRPGキャラクターシートアプリ</h1>
 
   <% if user_signed_in? %>
     <p>Welcome, <%= current_user.email %>!</p>
