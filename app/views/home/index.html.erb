@@ -3,16 +3,21 @@
 <head>
   <title>TRPGキャラクターシートアプリ</title>
   <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="styles.css"> 
 </head>
 <body>
-  <h1>TRPGキャラクターシートアプリ</h1>
+  <div class="home_main_content">
+    <div class="home-title">TRPGキャラクターシートアプリ</div>
 
-  <% if user_signed_in? %>
-    <p>Welcome, <%= current_user.email %>!</p>
-    <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
-  <% else %>
-    <%= link_to "ログイン", new_user_session_path %>
-    <%= link_to "サインアップ", new_user_registration_path %>
-  <% end %>
+    <div class="links">
+      <% if user_signed_in? %>
+        <p>Welcome, <%= current_user.email %>!</p>
+        <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+      <% else %>
+        <%= link_to "ログイン", new_user_session_path, class: "login-link" %> 
+        <%= link_to "サインアップ", new_user_registration_path, class: "signup-link" %> 
+      <% end %>
+    </div>
+  </div>
 </body>
 </html>
